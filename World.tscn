@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Payer/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sheet.png" type="Texture" id=2]
+[ext_resource path="res://UI/UI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://BattleSpawn.gd" type="Script" id=4]
 
 [sub_resource type="TileSet" id=1]
 1/name = "sheet.png 1"
@@ -182,6 +184,9 @@
 12/shapes = [  ]
 12/z_index = 0
 
+[sub_resource type="CircleShape2D" id=2]
+radius = 45.0111
+
 [node name="World" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -200,3 +205,17 @@ limit_left = 0
 limit_top = 0
 limit_smoothed = true
 smoothing_enabled = true
+
+[node name="BattleSpawn" type="Area2D" parent="."]
+position = Vector2( 199, 151 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattleSpawn"]
+shape = SubResource( 2 )
+
+[node name="UI" parent="." instance=ExtResource( 3 )]
+
+[connection signal="body_entered" from="BattleSpawn" to="BattleSpawn" method="_on_BattleSpawn_body_entered"]

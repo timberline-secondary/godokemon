@@ -17,9 +17,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, 20)
 		velocity.y = move_toward(velocity.y, 0, 20)
 	
-	
-	
 	move_and_slide(velocity)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
+func play_idle():
+	anim.get("parameters/playback").travel("Idle")
