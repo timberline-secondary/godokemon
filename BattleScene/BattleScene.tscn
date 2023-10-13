@@ -25,19 +25,19 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
-modulate = Color( 1, 0.5, 0.5, 0.396078 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 1 )
 expand = true
 
-[node name="Players" type="Node2D" parent="."]
-position = Vector2( 178, 161 )
+[node name="Player" type="Node2D" parent="."]
+position = Vector2( 292, 388 )
 
 [node name="Enemy" type="Node2D" parent="."]
-position = Vector2( 726, 202 )
+position = Vector2( 717, 270 )
 
 [node name="UI" type="Control" parent="."]
+visible = false
 margin_left = 296.0
 margin_top = 161.0
 margin_right = 296.0

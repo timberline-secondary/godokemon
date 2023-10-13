@@ -1,7 +1,7 @@
 extends CanvasLayer
 
-var pikmon = preload("res://Monsters/Pikmon.tscn")
+var pinkMon = preload("res://Monsters/Pinkmon.tscn")
 
 func _ready():
-	var mon = pikmon.instance()
-	$Enemy.add_child(mon)
+	var monTemp = pinkMon.instance()
+	$Enemy.add_child(monTemp)
